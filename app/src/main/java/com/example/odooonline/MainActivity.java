@@ -14,6 +14,8 @@ import de.timroes.axmlrpc.XMLRPCException;
 import de.timroes.axmlrpc.XMLRPCServerException;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Variables
     private OdooUtility odoo;
     private long loginTaskId;
     EditText editUsername;
