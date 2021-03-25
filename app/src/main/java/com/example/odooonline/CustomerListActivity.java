@@ -2,6 +2,7 @@ package com.example.odooonline;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -124,9 +125,13 @@ public class CustomerListActivity extends AppCompatActivity {
                         String itemValue = (String)
                                 listViewPartner.getItemAtPosition(position);
                         // Show Alert
-                        Toast.makeText(getApplicationContext(),
+                        /*Toast.makeText(getApplicationContext(),
                                 "Position :" + itemPosition + " ListItem : " +
-                                        itemValue, Toast.LENGTH_LONG).show();
+                                        itemValue, Toast.LENGTH_LONG).show();*/
+                        Intent myIntent = new Intent(CustomerListActivity.this,
+                                CustomerFormActivity.class);
+                        myIntent.putExtra("name", itemValue);
+                        CustomerListActivity.this.startActivity(myIntent);
                     }
                 });
     }

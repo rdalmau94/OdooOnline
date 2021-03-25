@@ -6,4 +6,16 @@
     <string name="search_partner">Search Partner</string>
     <string name="search">Search</string>
     <string name="partner_list">Partner List</string>
+    <string name="partner_details">Partner Details</string>
+    <string name="customer_name">customer name</string>
+    <string name="street">street</string>
+    <string name="state">state</string>
+    <string name="country">country</string>
+    <string name="phone">phone</string>
+    <string name="mobile">mobile</string>
+    <string name="email">email</string>
+    <string name="fax">fax</string>
+    <string name="website">website</string>
+    <string name="sale_order">Sale Order</string>
+    <string name="save">Save</string>
 </resources>
