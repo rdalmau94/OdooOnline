@@ -3,4 +3,7 @@
     <string name="main_menu">Main Menu</string>
     <string name="customer">Customer</string>
     <string name="sale_order">Sale Order</string>
+    <string name="search_partner">Search Partner</string>
+    <string name="search">Search</string>
+    <string name="partner_list">Partner List</string>
 </resources>
