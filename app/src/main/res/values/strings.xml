@@ -10,12 +10,21 @@
     <string name="customer_name">customer name</string>
     <string name="street">street</string>
     <string name="state">state</string>
+    <string name="State">State</string>
     <string name="country">country</string>
+    <string name="Country">Country</string>
     <string name="phone">phone</string>
     <string name="mobile">mobile</string>
     <string name="email">email</string>
+    <string name="Email">Email</string>
     <string name="fax">fax</string>
+    <string name="fax_n">Fax Number</string>
     <string name="website">website</string>
-    <string name="sale_order">Sale Order</string>
+    <string name="Website">Website</string>
     <string name="save">Save</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="phone_n">Phone Number</string>
+    <string name="mobile_n">Mobile Number</string>
 </resources>
