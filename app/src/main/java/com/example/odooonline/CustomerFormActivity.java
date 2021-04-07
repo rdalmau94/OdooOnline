@@ -66,7 +66,7 @@ public class CustomerFormActivity extends AppCompatActivity {
         editStreet2= (EditText) findViewById(R.id.editStreet2);
         editCity= (EditText) findViewById(R.id.editCity);
         editState= (EditText) findViewById(R.id.editState);
-        editCountry= (EditText) findViewById(R.id.editCity);
+        editCountry= (EditText) findViewById(R.id.editCountry);
         editPhone= (EditText) findViewById(R.id.editPhone);
         editMobile= (EditText) findViewById(R.id.editMobile);
         editFax= (EditText) findViewById(R.id.editFax);
@@ -198,9 +198,9 @@ public class CustomerFormActivity extends AppCompatActivity {
                 Arrays.asList(partner.getId()),
                 new HashMap() {{
                     put("name", partner.getName());
-                    put("street", partner.getName());
-                    put("street2", partner.getStreet());
-                    put("city", partner.getStreet2());
+                    put("street", partner.getStreet());
+                    put("street2", partner.getStreet2());
+                    put("city", partner.getCity());
                     put("state_id", partner.getStateId());
                     put("country_id", partner.getCountryId());
                     put("phone", partner.getPhone());
