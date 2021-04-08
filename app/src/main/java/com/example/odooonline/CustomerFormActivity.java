@@ -1,7 +1,9 @@
 package com.example.odooonline;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
@@ -34,11 +36,13 @@ public class CustomerFormActivity extends AppCompatActivity {
     EditText editCountry;
     EditText editPhone;
     EditText editMobile;
-    EditText editFax;
+    //EditText editFax;
     EditText editEmail;
     EditText editWebsite;
     CustomerListActivity.Partner partner;
     private long updatePartnerTaskId;
+    private long createPartnerTaskId;
+    private long deletePartnerTaskId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class CustomerFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_form);
 
         initFields();
+
         uid = SharedData.getKey(CustomerFormActivity.this, "uid");
         password = SharedData.getKey(CustomerFormActivity.this, "password");
         serverAddress = SharedData.getKey(CustomerFormActivity.this,
@@ -69,7 +74,7 @@ public class CustomerFormActivity extends AppCompatActivity {
         editCountry= (EditText) findViewById(R.id.editCountry);
         editPhone= (EditText) findViewById(R.id.editPhone);
         editMobile= (EditText) findViewById(R.id.editMobile);
-        editFax= (EditText) findViewById(R.id.editFax);
+        //editFax= (EditText) findViewById(R.id.editFax);
         editEmail= (EditText) findViewById(R.id.editEmail);
         editWebsite= (EditText) findViewById(R.id.editWebsite);
     }
@@ -88,7 +93,6 @@ public class CustomerFormActivity extends AppCompatActivity {
                     "country_id",
                     "phone",
                     "mobile",
-                    "fax",
                     "email",
                     "website"
             ));
@@ -116,19 +120,47 @@ public class CustomerFormActivity extends AppCompatActivity {
                             fillPartnerForm();
                         }
                     });
-                } else if (id==updatePartnerTaskId)
+                }else {
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Partner not found");
+                }
+            }else if (id==updatePartnerTaskId)
+            {
+                final Boolean updateResult = (Boolean) result;
+                if(updateResult)
                 {
-                    final Boolean updateResult = (Boolean) result;
-                    if(updateResult)
-                    {
-                        Log.v("PARTNER UPDATE", "successfully");
-                        odoo.MessageDialog(CustomerFormActivity.this,
-                                "Update customer succeed.");
-                    }
-                    else{
-                        odoo.MessageDialog(CustomerFormActivity.this,
-                                "Update customer failed. Server return was false");
-                    }
+                    Log.v("PARTNER UPDATE", "successfully");
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Update customer succeed.");
+                }
+                else{
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Update customer failed. Server return was false");
+                }
+            }else if (id == createPartnerTaskId){
+                String createResult = result.toString();
+                if(createResult != null)
+                {
+                    Log.v("PARTNER CREATE", "successfully");
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Create partner succeed. ID = " + createResult);
+                }
+                else
+                {
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Create partner failed. Server return was false");
+                }
+            }else if (id == deletePartnerTaskId) {
+                final Boolean deleteResult = (Boolean) result;
+                if(deleteResult)
+                {
+                    Log.v("PARTNER DELETE", "successfully");
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Delete customer succeed.");
+                }
+                else{
+                    odoo.MessageDialog(CustomerFormActivity.this,
+                            "Delete customer failed. Server return was false");
                 }
             }
             Looper.loop();
@@ -156,7 +188,7 @@ public class CustomerFormActivity extends AppCompatActivity {
         editCountry.setText(partner.getCountry());
         editPhone.setText(partner.getPhone());
         editMobile.setText(partner.getMobile());
-        editFax.setText(partner.getFax());
+        //editFax.setText(partner.getFax());
         editEmail.setText(partner.getEmail());
         editWebsite.setText(partner.getWebsite());
     }
@@ -170,7 +202,7 @@ public class CustomerFormActivity extends AppCompatActivity {
         String country = editCountry.getText().toString();
         String phone = editPhone.getText().toString();
         String mobile = editMobile.getText().toString();
-        String fax = editFax.getText().toString();
+        //String fax = editFax.getText().toString();
         String email = editEmail.getText().toString();
         String website = editWebsite.getText().toString();
         partner.setName(name);
@@ -183,14 +215,60 @@ public class CustomerFormActivity extends AppCompatActivity {
         partner.setCountry(country);
         partner.setPhone(phone);
         partner.setMobile(mobile);
-        partner.setFax(fax);
+        //partner.setFax(fax);
         partner.setEmail(email);
         partner.setWebsite(website);
     }
 
     public void onSavePartner(View v){
         updatePartnerModel();
-        updatePartnerToOdoo();
+        if (partner.getId() != null)
+            updatePartnerToOdoo();
+        else
+            createPartnerToOdoo();
+    }
+
+    private void createPartnerToOdoo(){
+        List data = Arrays.asList(new HashMap() {{
+            put("name", partner.getName());
+            put("street", partner.getName());
+            put("street2", partner.getStreet());
+            put("city", partner.getStreet2());
+            if (partner.getStateId() != null)
+                put("state_id", partner.getStateId());
+            if (partner.getCountryId() != null)
+                put("country_id", partner.getCountryId());
+            put("phone", partner.getPhone());
+            put("mobile", partner.getMobile());
+            //put("fax", partner.getFax());
+            put("email", partner.getEmail());
+            put("website", partner.getWebsite());
+        }});
+        createPartnerTaskId = odoo.create(listener, database, uid,
+                password, "res.partner", data);
+    }
+
+    public void onDeletePartner(View view){
+        AlertDialog.Builder alertDialogBuilder = new
+                AlertDialog.Builder(CustomerFormActivity.this);
+        String msg = "Are you sure to delete this?";
+        alertDialogBuilder.setMessage(msg)
+                .setPositiveButton(android.R.string.ok, new
+                        DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                deletePartner();
+                                dialog.dismiss();
+                            }
+                        }).create().show();
+    }
+
+    private void deletePartner(){
+        List conditions = Arrays.asList(
+                Arrays.asList( partner.getId() ));
+        deletePartnerTaskId = odoo.delete(listener, database, uid,
+                password, "res.partner", conditions);
     }
 
     private void updatePartnerToOdoo(){
@@ -205,7 +283,7 @@ public class CustomerFormActivity extends AppCompatActivity {
                     put("country_id", partner.getCountryId());
                     put("phone", partner.getPhone());
                     put("mobile", partner.getMobile());
-                    put("fax", partner.getFax());
+                    //put("fax", partner.getFax());
                     put("email", partner.getEmail());
                     put("website", partner.getWebsite());
                 }}

@@ -255,30 +255,6 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/tableRow11"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:padding="2.5dp">
-
-                <TextView
-                    android:id="@+id/textFax"
-                    android:layout_width="141dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fax_n"
-                    tools:text="Fax	Number" />
-
-                <EditText
-                    android:id="@+id/editFax"
-                    android:layout_width="262dp"
-                    android:layout_height="50dp"
-                    android:contentDescription="@string/fax"
-                    android:importantForAutofill="no"
-                    android:inputType="text" />
-            </TableRow>
-
-            <TableRow
                 android:id="@+id/tableRow12"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -310,8 +286,6 @@
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
         android:layout_marginTop="47dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
@@ -328,15 +302,35 @@
         android:id="@+id/buttonSaleOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="47dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="46dp"
         android:text="@string/sale_order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonSave"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="46dp"
+        android:onClick="onDeletePartner"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSaleOrder"
+        app:layout_constraintStart_toEndOf="@+id/buttonSave"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

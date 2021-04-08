@@ -64,8 +64,8 @@
 
     <ListView
         android:id="@+id/listPartner"
-        android:layout_width="369dp"
-        android:layout_height="581dp"
+        android:layout_width="365dp"
+        android:layout_height="498dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="9dp"
@@ -74,6 +74,25 @@
         android:layout_marginBottom="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editKeyword" />
+        app:layout_constraintTop_toBottomOf="@+id/editKeyword"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginLeft="159dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginRight="159dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onAddPartnerClick"
+        android:text="ADD NEW PARTNER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listPartner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -136,6 +136,12 @@ public class CustomerListActivity extends AppCompatActivity {
                 });
     }
 
+    public void onAddPartnerClick(View v){
+        Intent myIntent = new Intent(CustomerListActivity.this,
+                CustomerFormActivity.class);
+        CustomerListActivity.this.startActivity(myIntent);
+    }
+
     public static class Partner {
         private Integer id;
         private String name;
@@ -148,7 +154,7 @@ public class CustomerListActivity extends AppCompatActivity {
         private Integer countryId;
         private String phone;
         private String mobile;
-        private String fax;
+        //private String fax;
         private String email;
         private String website;
         public Integer getId() {
@@ -217,12 +223,12 @@ public class CustomerListActivity extends AppCompatActivity {
         public void setMobile(String mobile) {
             this.mobile = mobile;
         }
-        public String getFax() {
+        /*public String getFax() {
             return fax;
         }
         public void setFax(String fax) {
             this.fax = fax;
-        }
+        }*/
         public String getEmail() {
             return email;
         }
@@ -250,7 +256,7 @@ public class CustomerListActivity extends AppCompatActivity {
             setCountry(country_id.value);
             setPhone(OdooUtility.getString(classObj, "phone"));
             setMobile(OdooUtility.getString(classObj, "mobile"));
-            setFax(OdooUtility.getString(classObj, "fax"));
+            //setFax(OdooUtility.getString(classObj, "fax"));
             setEmail(OdooUtility.getString(classObj, "email"));
             setWebsite(OdooUtility.getString(classObj, "website"));
         }
