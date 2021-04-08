@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +45,7 @@ public class CustomerListActivity extends AppCompatActivity {
         database = SharedData.getKey(CustomerListActivity.this, "database");
         odoo = new OdooUtility(serverAddress, "object");
         arrayListPartner = new ArrayList();
-        listViewPartner = (ListView) findViewById(R.id.listPartner);
+        listViewPartner = (ListView) findViewById(R.id.listViewSO);
     }
 
     public void onClickSearchPartner(View v){

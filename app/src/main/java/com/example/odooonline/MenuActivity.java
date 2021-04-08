@@ -23,6 +23,10 @@ public class MenuActivity extends AppCompatActivity {
         MenuActivity.this.startActivity(myIntent);
     }
     public void onSaleOrderClick(View v){
+
         Log.d("MENU", "sale order button clicked");
+        Intent myIntent = new Intent(MenuActivity.this,
+                SOListActivity.class);
+        MenuActivity.this.startActivity(myIntent);
     }
 }

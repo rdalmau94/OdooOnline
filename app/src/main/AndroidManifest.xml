@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OdooOnline"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CustomerFormActivity"></activity>
+        <activity android:name=".SOListActivity"></activity>
+        <activity android:name=".CustomerFormActivity" />
         <activity android:name=".CustomerListActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity">

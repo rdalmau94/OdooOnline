@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomerListActivity">
+    tools:context=".SOListActivity">
 
     <TextView
         android:id="@+id/textView5"
@@ -17,7 +17,7 @@
         android:layout_marginRight="270dp"
         android:layout_marginBottom="674dp"
         android:contentDescription="Medium Text"
-        android:text="@string/partner_list"
+        android:text="Sale Order List"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         android:layout_marginRight="164dp"
         android:layout_marginBottom="615dp"
         android:autofillHints=""
-        android:contentDescription="@string/search_partner"
+        android:contentDescription="Hint: search partner"
         android:ems="10"
         android:inputType="textPersonName"
         android:onClick="onClickSearchPartner"
@@ -55,7 +55,8 @@
         android:layout_marginEnd="37dp"
         android:layout_marginRight="37dp"
         android:layout_marginBottom="617dp"
-        android:onClick="onClickSearchPartner"
+        android:contentDescription="OnClick: onClickSearchSO"
+        android:onClick="onClickSearchSO"
         android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,9 +91,10 @@
         android:layout_marginRight="159dp"
         android:layout_marginBottom="16dp"
         android:onClick="onAddPartnerClick"
-        android:text="ADD NEW PARTNER"
+        android:text="New Sale Order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listViewSO" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
