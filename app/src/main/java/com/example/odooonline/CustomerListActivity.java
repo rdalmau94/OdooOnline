@@ -45,7 +45,7 @@ public class CustomerListActivity extends AppCompatActivity {
         database = SharedData.getKey(CustomerListActivity.this, "database");
         odoo = new OdooUtility(serverAddress, "object");
         arrayListPartner = new ArrayList();
-        listViewPartner = (ListView) findViewById(R.id.listViewSO);
+        listViewPartner = (ListView) findViewById(R.id.listViewSOLine);
     }
 
     public void onClickSearchPartner(View v){

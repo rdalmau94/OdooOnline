@@ -27,4 +27,22 @@
     <string name="city">City</string>
     <string name="phone_n">Phone Number</string>
     <string name="mobile_n">Mobile Number</string>
+    <string name="for_each_pair_of_these_textview_and_edittext">For each pair of these TextView and EditText</string>
+    <string name="medium_text">Medium text</string>
+    <string name="textview">TextView</string>
+    <string name="form_element_layout">Form element layout</string>
+    <string name="hint_order_date">Hint: order date</string>
+    <string name="hint_order_reference">Hint: order reference</string>
+    <string name="hint_warehouse">Hint: warehouse</string>
+    <string name="hint_customer">Hint: customer</string>
+    <string name="hint_order_total">Hint: order total</string>
+    <string name="hint_state">Hint: state</string>
+    <string name="container_for_tablelayout_so_user_can_scroll_up_or_down_if_the_form_content_is_long_enough">Container for TableLayout so user can scroll up or down if the form content is long enough</string>
+    <string name="view_line_details">View Line Details</string>
+    <string name="add_new_item">Add New Item</string>
+    <string name="sale_order_lines">Sale Order Lines</string>
+    <string name="order_date">Order Date</string>
+    <string name="order_reference">Order Reference</string>
+    <string name="warehouse">Warehouse</string>
+    <string name="order_total">Order Total</string>
 </resources>

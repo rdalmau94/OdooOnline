@@ -2,6 +2,7 @@ package com.example.odooonline;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -10,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +46,7 @@ public class SOListActivity extends AppCompatActivity {
         odoo = new OdooUtility(serverAddress, "object");
         arrayListSaleOrder = new ArrayList();
         listViewSaleOrder = (ListView)
-                findViewById(R.id.listViewSO);
+                findViewById(R.id.listViewSOLine);
     }
 
     public void onClickSearchSO (View v){
@@ -126,9 +126,17 @@ public class SOListActivity extends AppCompatActivity {
                         String itemValue = (String)
                                 listViewSaleOrder.getItemAtPosition(position);
                         // Show Alert
-                        Toast.makeText(getApplicationContext(),
-                                "Position :" + itemPosition + " ListItem : " +
-                                        itemValue, Toast.LENGTH_LONG).show();
+                        /*
+                            Toast.makeText(getApplicationContext(),
+                               "Position :" + itemPosition + " ListItem : " +
+                                itemValue, Toast.LENGTH_LONG)
+                                .show();
+                         */
+                        Intent myIntent = new Intent(SOListActivity.this,
+                                SOFormActivity.class);
+                        myIntent.putExtra("name", itemValue);
+                        SOListActivity.this.startActivity(myIntent);
+
                     }
                 });
     }

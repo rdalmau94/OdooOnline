@@ -38,7 +38,7 @@
         android:contentDescription="Hint: search partner"
         android:ems="10"
         android:inputType="textPersonName"
-        android:onClick="onClickSearchPartner"
+        android:onClick="onClickSearchSO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listViewSO"
+        android:id="@+id/listViewSOLine"
         android:layout_width="365dp"
         android:layout_height="498dp"
         android:layout_marginStart="20dp"
@@ -90,11 +90,10 @@
         android:layout_marginEnd="159dp"
         android:layout_marginRight="159dp"
         android:layout_marginBottom="16dp"
-        android:onClick="onAddPartnerClick"
         android:text="New Sale Order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listViewSO" />
+        app:layout_constraintTop_toBottomOf="@+id/listViewSOLine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

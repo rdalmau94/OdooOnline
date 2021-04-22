@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OdooOnline"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SOListActivity"></activity>
+        <activity android:name=".SOLineListActivity"></activity>
+        <activity android:name=".SOFormActivity" />
+        <activity android:name=".SOListActivity" />
         <activity android:name=".CustomerFormActivity" />
         <activity android:name=".CustomerListActivity" />
         <activity android:name=".MenuActivity" />

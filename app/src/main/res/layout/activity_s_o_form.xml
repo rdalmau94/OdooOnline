@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SOFormActivity">
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginRight="147dp"
+        android:layout_marginBottom="638dp"
+        android:contentDescription="@string/medium_text"
+        android:text="@string/textview"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sale Order"
+        tools:ignore="InvalidId" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="363dp"
+        android:layout_height="445dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="141dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:context=".EditEntry">
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="2.5dp">
+
+                <TextView
+                    android:id="@+id/textName1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_date"
+                    tools:text="Order Date" />
+
+                <EditText
+                    android:id="@+id/editOrderDate"
+                    android:layout_width="185dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/hint_order_date"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="TextFields" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="2.5dp">
+
+                <TextView
+                    android:id="@+id/textAddress"
+                    android:layout_width="141dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customer"
+                    tools:text="Customer" />
+
+                <EditText
+                    android:id="@+id/editPartner"
+                    android:layout_width="262dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/hint_customer"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="2.5dp">
+
+                <TextView
+                    android:id="@+id/textAddress2"
+                    android:layout_width="141dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_reference"
+                    tools:text="Order Reference" />
+
+                <EditText
+                    android:id="@+id/editClientOrderRef"
+                    android:layout_width="262dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/hint_order_reference"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="2.5dp">
+
+                <TextView
+                    android:id="@+id/textCity"
+                    android:layout_width="141dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/warehouse"
+                    tools:text="Warehouse" />
+
+                <EditText
+                    android:id="@+id/editWarehouse"
+                    android:layout_width="262dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/hint_warehouse"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="2.5dp">
+
+                <TextView
+                    android:id="@+id/textState"
+                    android:layout_width="141dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_total"
+                    tools:text="Order Total" />
+
+                <EditText
+                    android:id="@+id/editAmountTotal"
+                    android:layout_width="262dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/hint_order_total"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="2.5dp">
+
+                <TextView
+                    android:id="@+id/textCountry"
+                    android:layout_width="141dp"
+                    android:layout_height="wrap_content"
+                    android:text="State"
+                    tools:text="State" />
+
+                <EditText
+                    android:id="@+id/editState"
+                    android:layout_width="262dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/hint_state"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="302dp"
+        android:layout_marginRight="302dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onSaveSaleOrderClick"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+    <Button
+        android:id="@+id/buttonViewLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClickViewDetail"
+        android:text="@string/view_line_details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonSave"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
